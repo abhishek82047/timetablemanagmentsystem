@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" id="loading">
+
+        <h2 id="form-title">Sign Up</h2>
+        <form id="signup-form">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="text" id="enrollment" placeholder="Enrollment No." required>
+            <select id="branch"></select>
+            <select id="semester">
+                <option value="I">I Semester</option>
+                <option value="II">II Semester</option>
+                <option value="III">III Semester</option>
+                <option value="IV">IV Semester</option>
+                <option value="V">V Semester</option>
+                <option value="VI">VI Semester</option>
+                <option value="VII">VII Semester</option>
+                <option value="VIII">VIII Semester</option>
+            </select>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Create Password" required>
+            <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+            <button type="submit" onclick="signup()">Sign Up</button>
+
+            <p>Already have an account? <a href="#" onclick="toggleForm()">Login here</a></p> <!-- Toggle to login form -->
+        </form>
+
+        <form id="login-form" style="display: none;">
+            <h2>Login</h2>
+            <input type="email" id="login-email" placeholder="Email" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button type="submit" onclick="login()">Login</button>
+
+            <p>Don't have an account? <a href="#" onclick="toggleForm()">Sign Up</a></p>
+        </form>
+    </div>
+
+    <div id="loading-animation" style="display: none;">Loading...</div>
+    <script src="script.js"></script>
+
+</body>
+</html>

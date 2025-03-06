@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Welcome to Timetable Management</h1>
+    <button onclick="logout()">Logout</button>
+
+    <h2>Select Panel</h2>
+    <button onclick="showAdminPanel()">Admin Panel</button> <!-- Show the admin panel -->
+    <button onclick="showPreviewPanel()">Check Timetable</button> <!-- Show the preview panel -->
+
+    <div id="admin-panel" class="hidden" style="display: block;">
+        <input type="password" id="admin-password" placeholder="Enter Admin Password">
+        <button onclick="unlockAdmin()">Enter</button>
+
+        <div id="admin-content" style="display: none;">
+            <h3>Add Timetable Entry</h3>
+            <!-- Removed department and branch dropdowns -->
+
+            <select id="semester">
+                <option value="I">I Semester</option>
+                <option value="II">II Semester</option>
+                <option value="III">III Semester</option>
+                <option value="IV">IV Semester</option>
+                <option value="V">V Semester</option>
+                <option value="VI">VI Semester</option>
+                <option value="VII">VII Semester</option>
+                <option value="VIII">VIII Semester</option>
+            </select>
+            <select id="day">
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+            </select>
+            <input type="time" id="start-time">
+            <input type="time" id="end-time">
+            <input type="text" id="subject" placeholder="Subject">
+            <input type="text" id="professor" placeholder="Professor">
+            <button onclick="addEntry()">Add Entry</button> <!-- Add a new timetable entry -->
+
+            <h3>Time Table Entries</h3>
+            <table id="admin-table">
+                <thead>
+                    <tr>
+                        <th>Department</th>
+                        <th>Semester</th>
+                        <th>Day</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Subject</th>
+                        <th>Professor</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="preview-panel" class="hidden" style="display: none;">
+        <h2>Check Time Table</h2>
+        <!-- Removed extra dropdown menu -->
+
+        <select id="search-semester">
+            <option value="I">I Semester</option>
+            <option value="II">II Semester</option>
+            <option value="III">III Semester</option>
+            <option value="IV">IV Semester</option>
+            <option value="V">V Semester</option>
+            <option value="VI">VI Semester</option>
+            <option value="VII">VII Semester</option>
+            <option value="VIII">VIII Semester</option>
+        </select>
+        <table id="preview-table"></table>
+    </div>
+
+    <div id="loading-animation" style="display: none;">Loading...</div>
+    <script src="script.js"></script>
+</body>
+</html>
